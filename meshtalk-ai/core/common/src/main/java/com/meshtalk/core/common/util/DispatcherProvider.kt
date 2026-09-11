@@ -1,0 +1,24 @@
+package com.meshtalk.core.common.util
+
+import kotlinx.coroutines.CoroutineDispatcher
+import kotlinx.coroutines.Dispatchers
+import javax.inject.Inject
+import javax.inject.Singleton
+
+/**
+ * Every module injects this instead of referencing [Dispatchers] directly, so tests can
+ * substitute a [kotlinx.coroutines.test.TestDispatcher] for all three without touching
+ * production code.
+ */
+interface DispatcherProvider {
+    val main: CoroutineDispatcher
+    val io: CoroutineDispatcher
+    val default: CoroutineDispatcher
+}
+
+@Singleton
+class DefaultDispatcherProvider @Inject constructor() : DispatcherProvider {
+    override val main: CoroutineDispatcher = Dispatchers.Main
+    override val io: CoroutineDispatcher = Dispatchers.IO
+    override val default: CoroutineDispatcher = Dispatchers.Default
+}

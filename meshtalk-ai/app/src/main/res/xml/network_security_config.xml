@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <!-- No INTERNET permission is requested in release builds, so this is belt-and-braces:
+         if any dependency ever attempts a network call, it fails closed rather than silently
+         phoning home. -->
+    <base-config cleartextTrafficPermitted="false" />
+</network-security-config>
