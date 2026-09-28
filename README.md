@@ -6,7 +6,7 @@ MeshTalk AI is an Android application designed to enable users to communicate **
 
 The project combines **offline communication, peer-to-peer networking, end-to-end encryption, and AI-powered features** into a single secure communication platform.
 
----
+
 
 ## ✨ Features
 
